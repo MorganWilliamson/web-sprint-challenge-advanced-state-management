@@ -8,9 +8,8 @@ import SmurfCard from "./SmurfCard";
 import SmurfForm from "./SmurfForm";
 
 const Smurfs = (props) => {
-    useEffect((e) => {
-        e.preventDefault();
-        props.getSmurf()
+    useEffect(() => {
+        props.getSmurfs()
     }, []);
 
     return(
@@ -36,4 +35,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect((mapStateToProps, { getSmurfs }))(Smurfs)
+export default connect(mapStateToProps, { getSmurfs })(Smurfs)
