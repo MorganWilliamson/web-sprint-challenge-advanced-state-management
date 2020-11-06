@@ -14,7 +14,9 @@ const SmurfForm = (props) => {
     };
 
     const handleSubmit = (e) => {
+        e.preventDefault();
         props.addSmurf(formState)
+        setFormState(formState)
     };
 
     return(
@@ -43,16 +45,15 @@ const SmurfForm = (props) => {
                     onChange={handleChange}
                     placeholder="Height (cm)"
                 />
-            </form>
-
             <button type="submit">Add a Smurf</button>
+            </form>
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
     return { 
-        addSmurf: state.addSmurf,
+        error: state.error,
     };
 };
 

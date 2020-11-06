@@ -46,6 +46,7 @@ export function reducer (state = initialState, action) {
         case ADD_SMURF_SUCCESS: 
             return {
                 ...state, 
+                smurfs: action.payload,
                 updated: true,
             }
         
