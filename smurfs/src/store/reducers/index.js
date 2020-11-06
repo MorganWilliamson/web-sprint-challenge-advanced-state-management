@@ -1,5 +1,6 @@
 ////////// index.js within the reducers directory ////////// 
 //import from actions
+import { FETCH_SMURFS_START, FETCH_SMURFS_FAILURE, FETCH_SMURFS_SUCCESS } from "../actions/index";
 
 //initial state
 const initialState = {
