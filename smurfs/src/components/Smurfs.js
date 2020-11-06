@@ -1,7 +1,11 @@
-//Imports
+//React/Redux
 import React, { useEffect } from "react";
 import { getSmurfs } from "../store/actions";
 import { connect } from "react-redux";
+
+//Components
+import SmurfCard from "./SmurfCard";
+import SmurfForm from "./SmurfForm";
 
 const Smurfs = (props) => {
     useEffect((e) => {
@@ -10,8 +14,15 @@ const Smurfs = (props) => {
     }, []);
 
     return(
-        <div>
-            {/* JSX */}
+        <div className="smurfsComp">
+            <SmurfForm />
+            {props.smurfs.map((smurf) => (
+                <SmurfCard 
+                    name={smurf.name}
+                    age={smurf.age}
+                    height={smurf.height}
+                />
+            ))}
         </div>
     )
 };
