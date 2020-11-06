@@ -32,6 +32,7 @@ const mapStateToProps = (state) => {
         smurfs: state.smurfs,
         isLoading: state.isLoading,
         error: state.error,
+        updated: state.updated,
     };
 };
 
